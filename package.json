@@ -1,0 +1,33 @@
+{
+  "name": "calendario-clase",
+  "version": "1.0.0",
+  "description": "A method to organizate better in the class",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Juan Lopez",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "clientside-require": "^4.7.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "fs-extra": "^10.0.0",
+    "handlebars": "^4.7.7",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "uuid": "^8.3.2",
+    "web-push": "^3.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

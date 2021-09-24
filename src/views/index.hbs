@@ -1,0 +1,72 @@
+<nav class="nav nav-pills nav-fill m-4 my-nav bg-light">
+  <h3 class="nav-link">Hola:{{userName}}</h3>
+</nav>
+
+<div class="calendar">
+    {{#if newNote}}
+    <label class="ms-2" id="checkbox">Vista de calendario → <input type="checkbox"></label>
+    {{/if}}
+    {{#if noNote}}
+        <label class="ms-2" id="checkbox">Vista de calendario → <input type="checkbox"></label>
+    {{/if}}
+    <div class="calendar__info">
+        <div class="calendar__prev" id="prev-month">←</div>
+        <div class="calendar__month" id="month">Enero</div>
+        <div class="calendar__year" id="year">2020</div>
+        <div class="calendar__next" id="next-month">→</div>
+    </div>
+    <div>
+
+
+
+
+    </div>
+    <div class="calendar__week">
+        <div class="calendar__day calendar__item">Lu</div>
+        <div class="calendar__day calendar__item">Ma</div>
+        <div class="calendar__day calendar__item">Mi</div>
+        <div class="calendar__day calendar__item">Ju</div>
+        <div class="calendar__day calendar__item">Vi</div>
+        <div class="calendar__day calendar__item">Sa</div>
+        <div class="calendar__day calendar__item">Do</div>
+    </div>
+    <div class="calendar__dates" id="dates"></div>
+</div>
+{{#if newNote}}
+<div class="contenedor">
+    <form action="/new-note/{{day}}/{{month}}/{{year}}" method="GET">
+        <button type="submit" class="btn btn-warning m-4">Crear una nueva nota</button>
+    </form>
+    {{#each newNote}}
+        <div class="card m-4">
+            <div class="card-header bg-dark text-light d-flex">
+                <h3 class="d-block">{{title}}</h3>
+                <a href="/edit-note/{{_id}}" class="btn btn-primary ms-4">Editar</a>
+                <form action="/delete-note/{{_id}}" method="POST">
+                    <div class="form group ms-4">
+                        <button type="submit" class="btn btn-danger p-0-4">Borrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-body">
+                <p>{{description}}</p>
+            </div>
+        </div>
+    {{/each}}
+</div>
+{{/if}}
+
+{{#if noNote}}
+<div class="contenedor">
+    <form action="/new-note/{{day}}/{{month}}/{{year}}" method="GET">
+        <button type="submit" class="btn btn-warning m-4">{{noNote}}</button>
+    </form>
+</div>
+{{/if}}
+<script>
+        var indexDay = "{{day}}"
+        var indexMonth = "{{month}}"
+        var indexYear = "{{year}}"
+</script>
+<script src="../../../calendar.js"></script>
+<script src="../../../weekView.js"></script>
